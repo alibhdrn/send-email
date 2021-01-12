@@ -1,9 +1,10 @@
 //variables
-const sendBtn = document.querySelector('#sendBtn')
-let email = document.querySelector('#email')
-let subject = document.querySelector('#subject')
-let message = document.querySelector('#message')
-
+const sendBtn = document.querySelector('#sendBtn'),
+    email = document.querySelector('#email'),
+    subject = document.querySelector('#subject'),
+    message = document.querySelector('#message'),
+    resetBTN = document.querySelector('#resetBtn'),
+    form = document.querySelector('#email-form')
 
 
 
@@ -21,6 +22,8 @@ function eventListeners() {
     email.addEventListener('blur', validateField)
     subject.addEventListener('blur', validateField)
     message.addEventListener('blur', validateField)
+    //reset btn
+    resetBTN.addEventListener('click', resetForm)
 }
 
 
@@ -61,7 +64,6 @@ function validateLength(field) {
 }
 // validate email field contains @
 function validateEmail(field) {
-    console.log(field.value)
     const emailText = field.value
     if (emailText.includes('@')) {
         field.style.borderBottomColor = 'green'
@@ -70,4 +72,9 @@ function validateEmail(field) {
         field.style.borderBottomColor = 'red'
         field.classList.add('error')
     }
+}
+
+//reset form with button
+function resetForm() {
+    form.reset()
 }
