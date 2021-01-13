@@ -47,7 +47,7 @@ function submitForm(e) {
 
     //make second gif
     const sendEmailImg = document.createElement('img')
-    sendEmailImg.src = '../img/mail.gif'
+    sendEmailImg.src = './mail.gif'
     sendEmailImg.style.display = 'block'
 
 
