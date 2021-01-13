@@ -24,6 +24,8 @@ function eventListeners() {
     message.addEventListener('blur', validateField)
     //reset btn
     resetBTN.addEventListener('click', resetForm)
+    //submit form and show gif
+    form.addEventListener('submit', submitForm)
 }
 
 
@@ -35,6 +37,20 @@ function appInit() {
     // disabled send button on load
     sendBtn.disabled = true
 }
+
+//sending email and submit the form
+function submitForm(e) {
+    e.preventDefault()
+    //show the spinner
+    const spinner = document.getElementById('spinner')
+    spinner.style.display = 'block'
+    //show the email send
+    setTimeout(function () {
+        //hide spinner
+        spinner.style.display = 'none'
+    }, 3000);
+}
+
 
 // validating fields of form
 function validateField() {
