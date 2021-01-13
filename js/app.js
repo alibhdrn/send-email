@@ -44,10 +44,26 @@ function submitForm(e) {
     //show the spinner
     const spinner = document.getElementById('spinner')
     spinner.style.display = 'block'
+
+    //make second gif
+    const sendEmailImg = document.createElement('img')
+    sendEmailImg.src = '../img/mail.gif'
+    sendEmailImg.style.display = 'block'
+
+
+
     //show the email send
     setTimeout(function () {
         //hide spinner
         spinner.style.display = 'none'
+        const loaders = document.querySelector('#loaders')
+        loaders.appendChild(sendEmailImg)
+
+        //reset form and remove
+        setTimeout(() => {
+            resetForm()
+            sendEmailImg.remove()
+        }, 5000);
     }, 3000);
 }
 
